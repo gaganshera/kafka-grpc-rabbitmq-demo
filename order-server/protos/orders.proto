@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package order;
+
+// The greeting service definition.
+service Order {
+  // Sends a greeting
+  rpc PlaceOrder (Product) returns (PlaceOrderReply) {}
+}
+
+// The request message containing the user's name.
+message Product {
+  string product_id = 1;
+  int32 quantity = 2;
+}
+
+// The response message containing the greetings
+message PlaceOrderReply {
+  string status = 1;
+  string message = 2;
+  string orderId = 3;
+}
