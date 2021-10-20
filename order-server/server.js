@@ -1,4 +1,5 @@
-const orderService = require("./services/orders-service")
+require("dotenv").config();
+const orderService = require("./services/orders-service");
 const PROTO_PATH = __dirname + "/protos/orders.proto";
 const grpc = require("@grpc/grpc-js");
 const protoLoader = require("@grpc/proto-loader");
