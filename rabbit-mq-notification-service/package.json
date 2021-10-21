@@ -1,0 +1,16 @@
+{
+  "name": "rabbit-mq-notification-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./notification-consumer.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.8.0",
+    "dotenv": "^10.0.0",
+    "rascal": "^13.1.2"
+  }
+}
