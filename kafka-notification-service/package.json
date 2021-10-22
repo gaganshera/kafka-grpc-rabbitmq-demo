@@ -9,9 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "amqplib": "^0.8.0",
     "dotenv": "^10.0.0",
-    "kafkajs": "^1.15.0",
-    "rascal": "^13.1.2"
+    "kafkajs": "^1.15.0"
   }
 }
