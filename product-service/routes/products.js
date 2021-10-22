@@ -17,7 +17,7 @@ router.get("/:productId", async function (req, res, next) {
 
 router.post("/:productId/order", async function (req, res, next) {
   const randomProduct = await products.placeOrder(req, res);
-  console.log(randomProduct, 'dskjladkhsjvgjhsjkldahkfskjaldkhd');
+  console.log("RESPONSE", randomProduct);
   res.json(randomProduct).status(200);
 });
 

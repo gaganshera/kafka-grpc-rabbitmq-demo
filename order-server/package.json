@@ -10,6 +10,7 @@
     "@grpc/proto-loader": "^0.5.0",
     "amqplib": "^0.8.0",
     "dotenv": "^10.0.0",
+    "kafkajs": "^1.15.0",
     "rascal": "^13.1.2",
     "uuid": "^8.3.2"
   }

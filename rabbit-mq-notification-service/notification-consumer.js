@@ -1,9 +1,9 @@
+require("dotenv").config();
 const RabbitMqBroker = require("./clients/rabbitmq-broker-client");
 
 async function consumer() {
-  const broker = await RabbitMqBroker.getBroker();
-
   try {
+    const broker = await RabbitMqBroker.getBroker();
     const subscription = await broker.subscribe("notifications_s1");
     subscription
       .on("message", (message, content, ackOrNack) => {

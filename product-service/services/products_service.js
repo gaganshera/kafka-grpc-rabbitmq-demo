@@ -27,7 +27,6 @@ class Products {
     const { productId: product_id, quantity } = req.body;
     try {
       const response = await placeOrder({ product_id, quantity });
-      console.log("RESPONSE", response);
       return response;
     } catch (err) {
       console.log("Error while calling placeOrder", err);
