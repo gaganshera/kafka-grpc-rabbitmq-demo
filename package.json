@@ -1,0 +1,19 @@
+{
+  "name": "middlewares",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "start": "(cd product-service && npm run start) & (cd order-server && npm run start) & (cd rabbit-mq-notification-service && npm run start) & (cd kafka-notification-service && npm run start)"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gaganshera/kafka-grpc-rabbitmq-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gaganshera/kafka-grpc-rabbitmq-demo/issues"
+  },
+  "homepage": "https://github.com/gaganshera/kafka-grpc-rabbitmq-demo#readme"
+}

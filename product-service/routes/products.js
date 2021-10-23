@@ -11,11 +11,11 @@ router.get('/', async function (req, res, next) {
 });
 
 router.get("/:productId", async function (req, res, next) {
-  const randomProduct = await products.getDetails(req, res);
-  res.json(randomProduct).status(200);
+  const product = await products.getDetails(req, res);
+  res.json(product).status(200);
 });
 
-router.post("/:productId/order", async function (req, res, next) {
+router.post("/order", async function (req, res, next) {
   const randomProduct = await products.placeOrder(req, res);
   console.log("RESPONSE", randomProduct);
   res.json(randomProduct).status(200);

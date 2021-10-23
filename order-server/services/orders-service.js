@@ -6,7 +6,7 @@ async function placeOrder(call, callback) {
   const { product_id, quantity } = call.request;
   console.log(`Mock order placed for product id ${product_id} for quantity ${quantity}`);
 
-  const order = { orderId: uuidv4(), message: "success", status: 1 };
+  const order = { orderId: uuidv4(), productId: product_id, message: "success", status: 1 };
 
   try {
     //Rabbit mq publish
@@ -21,8 +21,8 @@ async function placeOrder(call, callback) {
     //kafka publish
     const kafkaProducer = await KafkaBroker.getProducer();
     await kafkaProducer.send({
-      topic: "notification-kt1",
-      messages: [{ key: order.orderId, value: JSON.stringify(order) }],
+      topic: "notification-kt-1",
+      messages: [{ key: order.productId, value: JSON.stringify(order) }],
     });
     console.log("Published post order events to Kafka");
   } catch (err) {

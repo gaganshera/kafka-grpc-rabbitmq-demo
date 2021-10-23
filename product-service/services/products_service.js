@@ -16,8 +16,12 @@ class Products {
 
   async getDetails(req, res) {
     try {
-      const randomKey = Math.floor(Math.random() * products.length);
-      return await products[randomKey];
+      const { productId } = req.params;
+      if (!productId) {
+        return {};
+      }
+      const product = products.find((p) => p.id === productId);
+      return product;
     } catch (err) {
       return {};
     }

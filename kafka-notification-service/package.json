@@ -1,5 +1,5 @@
 {
-  "name": "rabbit-mq-notification-service",
+  "name": "kafka-notification-service",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",

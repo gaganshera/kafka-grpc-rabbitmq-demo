@@ -4,7 +4,7 @@ const KafkaBroker = require("./clients/kafka-client");
 async function consumer() {
   try {
     const consumer = await KafkaBroker.getConsumer();
-    await consumer.subscribe({ topic: "notification-kt1", fromBeginning: true });
+    await consumer.subscribe({ topic: "notification-kt-1" /*, fromBeginning: true*/ });
     await consumer.run({
       eachMessage: async ({ topic, partition, message }) => {
         const prefix = `${topic}[${partition} | ${message.offset}] / ${message.timestamp}`;
