@@ -7,10 +7,13 @@ Following softwares should be installed
 - RabbitMq running
 - Kafka (3 brokers), server properties files attached.
 
+Following ports should be available for the nodejs services:
+- Product service http server: 8066
+- Order service gRPC server: 50051
 ### **How to install**
-- In the 3 services: order-server, kafka-notification-service, rabbit-mq-notification-service
-  1. Rename the dev.env to .env
-  2. Put the appropriate env details in all 3 .env files with information for RabbitMq and Kafka clusters, replacing the dummy information
+- In the 3 folders: order-server, kafka-notification-service, rabbit-mq-notification-service
+  1. Rename the `dev.env` to `.env`
+  2. Put the appropriate env details in all 3 `.env` files with information for RabbitMq and Kafka clusters, replacing the dummy information
 - Run `npm install` in all the 4 services
   1. Go to `product-service` folder and run `npm install`
   2. Go to `order-server` folder and run `npm install`
@@ -52,3 +55,37 @@ Following softwares should be installed
 - Another way is to simply run the project from root folder. However, in this case all the logs in the terminal will be concurrent and it'll be harder to see output of each service separately.
   1. From the root, run `npm start`
 
+### **APIs**
+1. List all products  
+```
+  GET /products/ HTTP/1.1
+  Host: localhost:8066
+```
+```bash
+curl --location --request GET 'localhost:8066/products/'
+```  
+
+2. Get product details
+
+```bash
+  GET /products/:productId HTTP/1.1
+  Host: localhost:8066
+```
+`productId` is id returned from the list all products API
+```bash
+curl --location --request GET 'localhost:8066/products/332acbc6-aebc-4210-b97d-31ff23768f67'
+```
+
+3. Place order
+```json
+GET /products/order HTTP/1.1
+Host: localhost:8066
+Content-Type: application/json
+
+{"productId": "332acbc6-aebc-4210-b97d-31ff23768f67", "quantity": 2}
+```
+```bash
+curl --location --request GET 'localhost:8066/products/order' \
+--header 'Content-Type: application/json' \
+--data-raw '{"productId": "332acbc6-aebc-4210-b97d-31ff23768f67", "quantity": 2}'
+```
