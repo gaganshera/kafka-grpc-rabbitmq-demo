@@ -89,3 +89,8 @@ curl --location --request GET 'localhost:8066/products/order' \
 --header 'Content-Type: application/json' \
 --data-raw '{"productId": "332acbc6-aebc-4210-b97d-31ff23768f67", "quantity": 2}'
 ```
+
+### Misc Details
+- RabbitMQ exchange name: `notification_ex`
+- RabbitMQ queue name: `notification_q`
+- Kafka topic: `notification-kt-1`
