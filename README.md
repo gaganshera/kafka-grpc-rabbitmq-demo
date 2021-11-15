@@ -85,7 +85,7 @@ Content-Type: application/json
 {"productId": "332acbc6-aebc-4210-b97d-31ff23768f67", "quantity": 2}
 ```
 ```bash
-curl --location --request GET 'localhost:8066/products/order' \
+curl --location --request POST 'localhost:8066/products/order' \
 --header 'Content-Type: application/json' \
 --data-raw '{"productId": "332acbc6-aebc-4210-b97d-31ff23768f67", "quantity": 2}'
 ```
