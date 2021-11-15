@@ -78,7 +78,7 @@ curl --location --request GET 'localhost:8066/products/332acbc6-aebc-4210-b97d-3
 
 3. Place order
 ```
-GET /products/order HTTP/1.1
+POST /products/order HTTP/1.1
 Host: localhost:8066
 Content-Type: application/json
 
